@@ -1,0 +1,134 @@
+@import "tailwindcss";
+
+@theme {
+  --color-cream: #faf8f5;
+  --color-beige: #f0ebe3;
+  --color-beige-dark: #e8dfd3;
+  --color-sage: #8fa68a;
+  --color-sage-light: #b5c9b0;
+  --color-sage-dark: #52694e;
+  --color-charcoal: #2c2c2c;
+  --color-charcoal-light: #4a4a4a;
+  --color-gray-soft: #f5f5f4;
+  --color-gray-muted: #716b67;
+  --color-whatsapp: #25d366;
+  --color-whatsapp-dark: #1da851;
+
+  --font-display: var(--font-playfair);
+  --font-body: var(--font-dm-sans);
+
+  --shadow-soft: 0 2px 16px -2px rgb(44 44 44 / 0.05);
+  --shadow-medium: 0 4px 24px -4px rgb(44 44 44 / 0.08);
+  --shadow-luxury: 0 8px 40px -8px rgb(44 44 44 / 0.1);
+  --shadow-glass: 0 4px 20px rgb(44 44 44 / 0.05);
+
+  --radius-card: 20px;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
+
+  body {
+    @apply bg-cream text-charcoal antialiased;
+    font-family: var(--font-body), system-ui, sans-serif;
+  }
+
+  ::selection {
+    @apply bg-sage/30 text-charcoal;
+  }
+}
+
+@layer utilities {
+  .glass {
+    @apply border border-white/50 bg-white/70 backdrop-blur-md;
+  }
+
+  .glass-dark {
+    @apply border border-white/10 bg-charcoal/55 backdrop-blur-md;
+  }
+
+  .section-padding {
+    @apply px-4 py-12 sm:px-8 sm:py-24 lg:px-12 lg:py-28;
+  }
+
+  .container-luxury {
+    @apply mx-auto w-full max-w-7xl min-w-0;
+  }
+
+  .premium-card {
+    @apply rounded-[20px] border border-beige-dark/40 bg-white/75 shadow-soft backdrop-blur-sm transition-[box-shadow,transform] duration-300;
+  }
+
+  .premium-card-interactive {
+    @apply rounded-[20px] border border-beige-dark/40 bg-white/75 shadow-soft backdrop-blur-sm transition-[box-shadow,transform] duration-300 hover:shadow-medium;
+  }
+
+  .icon-wrap {
+    @apply flex h-11 w-11 shrink-0 items-center justify-center rounded-[14px] border border-beige-dark/35 bg-white/65 text-sage-dark;
+  }
+
+  .section-eyebrow {
+    @apply text-xs font-medium uppercase tracking-[0.22em] text-sage-dark sm:text-sm;
+  }
+
+  .btn-secondary {
+    @apply inline-flex min-h-[48px] w-full items-center justify-center gap-2 rounded-[20px] border border-beige-dark/60 bg-white px-6 py-3.5 text-sm font-medium text-charcoal shadow-soft transition-[box-shadow,transform,border-color,color] duration-300 hover:border-sage/35 hover:text-sage-dark hover:shadow-medium focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sage/40 focus-visible:ring-offset-2 sm:w-auto sm:px-7;
+  }
+
+  .prose-body {
+    @apply text-base leading-relaxed text-charcoal-light sm:text-[1.0625rem] sm:leading-relaxed;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-cream);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-beige-dark);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-sage);
+}
+
+.masonry-grid {
+  columns: 1;
+  column-gap: 0.875rem;
+}
+
+@media (min-width: 640px) {
+  .masonry-grid {
+    columns: 2;
+    column-gap: 1.25rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .masonry-grid {
+    columns: 3;
+    column-gap: 1.5rem;
+  }
+}
+
+.masonry-item {
+  break-inside: avoid;
+  margin-bottom: 0.875rem;
+}
+
+/* Keyboard navigation and fixed-header anchor clearance. */
+section[id] { scroll-margin-top: 6rem; }
+:focus-visible { outline: 2px solid #476443; outline-offset: 4px; }
