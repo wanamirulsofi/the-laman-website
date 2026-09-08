@@ -1,5 +1,5 @@
 export const WHATSAPP_URL =
-  "https://wa.me/601124215026?text=Assalamualaikum%20Zakiah%2C%20saya%20nak%20tanya%20tentang%20tempahan%20THE%20LAMAN.";
+  "https://wa.me/601124215056?text=Assalamualaikum%20Zakiah%2C%20saya%20nak%20tanya%20tentang%20tempahan%20THE%20LAMAN.";
 
 export const SITE = {
   name: "THE LAMAN",
@@ -10,8 +10,8 @@ export const SITE = {
   url: "https://thelamanhome.com",
   adminName: "Zakiah",
   adminLabel: "Admin Zakiah",
-  phone: "011-2421 5026",
-  phoneRaw: "601124215026",
+  phone: "011-2421 5056",
+  phoneRaw: "601124215056",
   location: "Kg Padang Jaya, Kuantan, Pahang, Malaysia",
   locationShort: "Kg Padang Jaya, Kuantan, Pahang",
   email: "hello@thelaman.com.my",
